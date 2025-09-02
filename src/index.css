@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Selectium - Ultra-sophisticated design system for luxury web agency */
+
+@layer base {
+  :root {
+    /* Pure luxury palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    
+    /* Sophisticated grays */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Premium black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Elegant gray */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 15%;
+    
+    /* Champagne gold accent */
+    --accent: 45 35% 75%;
+    --accent-foreground: 0 0% 8%;
+    
+    /* Sophisticated pearl */
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 12%;
+    
+    /* Subtle borders */
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
+    --ring: 0 0% 20%;
+    
+    /* Premium spacing */
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    
+    /* Luxury gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 35% 75%) 0%, hsl(45 25% 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    
+    /* Premium shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
+    --shadow-subtle: 0 4px 20px -2px hsl(0 0% 0% / 0.08);
+    --shadow-card: 0 8px 30px -4px hsl(0 0% 0% / 0.12);
+    
+    /* Sophisticated transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-elegant: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-feature-settings: "kern" 1, "liga" 1, "swsh" 1;
+  }
+}
+
+@layer components {
+  /* Selectium premium components */
+  .text-hero {
+    @apply text-5xl md:text-7xl lg:text-8xl font-light leading-none tracking-tight;
+  }
+  
+  .text-display {
+    @apply text-3xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight;
+  }
+  
+  .text-heading {
+    @apply text-2xl md:text-3xl lg:text-4xl font-normal leading-tight;
+  }
+  
+  .text-subheading {
+    @apply text-lg md:text-xl font-normal leading-relaxed;
+  }
+  
+  .text-elegant {
+    @apply text-base md:text-lg leading-relaxed font-light;
+  }
+  
+  .btn-primary {
+    @apply px-8 py-4 bg-primary text-primary-foreground border border-primary hover:bg-primary/90 transition-all duration-500 font-medium tracking-wide;
+  }
+  
+  .btn-ghost {
+    @apply px-8 py-4 border border-border hover:border-primary hover:text-primary transition-all duration-500 font-medium tracking-wide;
+  }
+  
+  .btn-accent {
+    @apply px-8 py-4 bg-gradient-to-r from-accent to-accent/80 text-accent-foreground hover:shadow-lg transition-all duration-500 font-medium tracking-wide;
+  }
+  
+  .card-elegant {
+    @apply bg-card border border-border/50 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-700;
+  }
+  
+  .section-padding {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+  
+  .container-elegant {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+@layer utilities {
+  .luxury-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .accent-gradient {
+    background: var(--gradient-accent);
+  }
+  
+  .elegant-shadow {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .subtle-shadow {
+    box-shadow: var(--shadow-subtle);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
